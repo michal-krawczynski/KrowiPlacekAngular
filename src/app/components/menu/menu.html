@@ -1,1 +1,18 @@
-<p>Michał!</p>
+<div class="container">
+  <table>
+    <thead class="menu-th">
+    <th>Burger</th>
+    <th>Cena</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let burger of burgers" class="menu-item">
+      <td class="menu-td">
+        {{ burger.name }}
+      </td>
+      <td class="menu-td">
+        {{ burger.price }}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

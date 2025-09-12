@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-menu',
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, NgForOf, NgIf],
   templateUrl: './menu.html',
   styleUrl: './menu.css'
 })

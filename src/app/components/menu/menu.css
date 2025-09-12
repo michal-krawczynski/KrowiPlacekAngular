@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: aqua;
+}
+
+.menu-table{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 1000px;
+}
+
+.menu-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-td{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-right: 200px;
+}
+
+.menu-th{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 200px;
+}
