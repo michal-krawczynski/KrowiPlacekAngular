@@ -1,18 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgForOf, NgIf} from '@angular/common';
+import {HttpService} from '../../services/http-service';
 
 @Component({
   selector: 'app-menu',
-  imports: [HttpClientModule, NgForOf, NgIf],
+  imports: [NgForOf, NgIf],
   templateUrl: './menu.html',
   styleUrl: './menu.css'
 })
 export class Menu implements OnInit {
   burgers: any;
-  response: any;
-  api_url: string = 'http://localhost:8000';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpService) {
   }
   ngOnInit() {
 
@@ -20,7 +18,7 @@ export class Menu implements OnInit {
 
   }
   callApi(): void {
-    this.http.get(this.api_url + '/api/burgers/').subscribe(res => {
+    this.http.get('burgers/').subscribe(res => {
       this.burgers = res;
     })
   }
