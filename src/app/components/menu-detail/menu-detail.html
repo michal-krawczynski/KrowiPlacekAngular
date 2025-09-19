@@ -1,1 +1,5 @@
-<p>menu-detail works!</p>
+<div *ngIf="burger">
+  <div *ngFor="let ingredient of burger.ingredients" class="ingredient">
+    {{ ingredient.name }}
+  </div>
+</div>

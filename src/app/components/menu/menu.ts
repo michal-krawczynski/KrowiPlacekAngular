@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from '@angular/common';
 import {HttpService} from '../../services/http-service';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
-  imports: [NgForOf, NgIf],
+  imports: [NgForOf, RouterLink],
   templateUrl: './menu.html',
   styleUrl: './menu.css'
 })

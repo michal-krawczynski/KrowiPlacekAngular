@@ -6,12 +6,14 @@
     </thead>
     <tbody>
     <tr *ngFor="let burger of burgers" class="menu-item">
-      <td class="menu-td">
-        {{ burger.name }}
-      </td>
-      <td class="menu-td">
-        {{ burger.price }}
-      </td>
+      <a [routerLink]="['/menu-detail', burger.id]">
+        <td class="menu-td">
+          {{ burger.name }}
+        </td>
+        <td class="menu-td">
+          {{ burger.price }}
+        </td>
+      </a>
     </tr>
     </tbody>
   </table>
