@@ -13,7 +13,7 @@ import {NgForOf, NgIf} from '@angular/common';
   styleUrl: './menu-detail.css'
 })
 export class MenuDetail implements OnInit {
-  burger: any;
+  burgers: any;
   burgerId: string = '';
   loading = true;
 
@@ -29,7 +29,7 @@ export class MenuDetail implements OnInit {
     this.loading = true;
     this.http.get(`burger/${this.burgerId}/detail/`).subscribe({
       next: res => {
-        this.burger = res;
+        this.burgers = res;
       },
       error: err => {
         console.error('Błąd pobierania burgera', err);

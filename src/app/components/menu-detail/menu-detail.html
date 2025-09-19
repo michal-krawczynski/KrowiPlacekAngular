@@ -1,5 +1,7 @@
-<div *ngIf="burger">
-  <div *ngFor="let ingredient of burger.ingredients" class="ingredient">
-    {{ ingredient.name }}
+<div *ngIf="!loading">
+  <div *ngFor="let burger of burgers">
+    <div *ngFor="let ingredient of burger.ingredients" class="ingredient">
+      {{ ingredient }}
+    </div>
   </div>
 </div>
