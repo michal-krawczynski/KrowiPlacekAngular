@@ -1,0 +1,139 @@
+/* ========== Zmienne kolorów (ładne, stonowane odcienie) ========== */
+:root {
+  --bg: #0b0c0e;              /* głębokie tło (prawie czarne) */
+  --surface: #121417;         /* karty/panele */
+  --surface-2: #181b20;       /* hover/raised */
+  --text: #eef2f5;            /* podstawowy tekst */
+  --muted: #a3acb9;           /* tekst wtórny */
+  --brand-green: #2f7d4a;     /* zieleń (elegancka, zgaszona) */
+  --brand-green-strong: #278043;
+  --brand-blue: #1e6fe3;      /* niebieski atramentowy */
+  --brand-blue-strong: #1a63cc;
+  --outline: #2a3340;         /* obrys/focus */
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+
+/* Preferencje systemowe — jeśli ktoś ma jasny motyw */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f9fb;
+    --surface: #ffffff;
+    --surface-2: #f2f4f7;
+    --text: #0c0f12;
+    --muted: #5a6779;
+    --outline: #d9e1ea;
+    --shadow: 0 8px 24px rgba(16,24,40,0.08);
+  }
+}
+
+/* ========== Reset/typografia ========== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(46,125,50,0.18), transparent 55%),
+  radial-gradient(900px 700px at 110% 10%, rgba(30,111,227,0.14), transparent 50%),
+  var(--bg);
+  color: var(--text);
+  font: 500 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Linki i focus */
+a { color: var(--brand-blue); text-decoration: none; }
+a:hover { color: var(--brand-blue-strong); }
+:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ========== Layout ========== */
+.container {
+  width: min(1200px, 92vw);
+  margin: 96px auto 48px;  /* zostawiamy miejsce pod header */
+  display: grid;
+  gap: 28px;
+}
+
+/* Hero */
+.hero {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(47,125,74,0.18), rgba(30,111,227,0.14));
+  border: 1px solid var(--outline);
+  box-shadow: var(--shadow);
+}
+.hero__title {
+  margin: 0 0 6px;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: 0.2px;
+}
+.hero__subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Sekcja zawartości */
+.content {
+  display: grid;
+  gap: 24px;
+}
+
+/* ========== Karty burgerów – klasy pomocnicze pod Twój komponent ========== */
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: clip;
+  display: grid;
+}
+.card:hover { border-color: color-mix(in srgb, var(--brand-green) 40%, var(--outline)); transform: translateY(-2px); transition: 150ms ease; }
+.card__image {
+  aspect-ratio: 16/10;
+  width: 100%;
+  object-fit: cover;
+  background: var(--surface-2);
+}
+.card__body { padding: 16px 18px 18px; display: grid; gap: 8px; }
+.card__title { font-size: 18px; margin: 0; }
+.card__meta { color: var(--muted); font-size: 14px; }
+.card__cta {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg, var(--brand-green), var(--brand-green-strong));
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.card__cta:hover { filter: brightness(1.03); }
+.card__cta:active { transform: translateY(1px); }
+
+/* ========== Utility (opcjonalne) ========== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand-blue) 20%, var(--surface));
+  border: 1px solid var(--outline);
+  font-size: 12px;
+  color: var(--text);
+}

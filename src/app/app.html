@@ -1,2 +1,18 @@
-<a routerLink="/menu">Menu</a>
-<router-outlet></router-outlet>
+<app-header />
+
+<main class="container">
+  <section class="hero">
+    <h1 class="hero__title">Burger Menu</h1>
+    <p class="hero__subtitle">
+      Wybierz burgera, a potem zobacz jego składniki i szczegóły
+    </p>
+  </section>
+
+  <!-- Miejsce na listę burgerów (Twój komponent wstawi tutaj siatkę kart) -->
+  <section class="content">
+    <router-outlet />
+    <!-- Jeśli wolisz bez routingu, chwilowo można wstawić <app-burger-list /> -->
+  </section>
+</main>
+
+<app-footer />

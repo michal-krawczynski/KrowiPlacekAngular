@@ -1,0 +1,14 @@
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" routerLink="/">
+      <span class="brand__dot brand__dot--g"></span>
+      <span class="brand__dot brand__dot--b"></span>
+      <span class="brand__name">Burger<span class="brand__accent">App</span></span>
+    </a>
+
+    <nav class="links" aria-label="Główne">
+      <a routerLink="/menu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Menu</a>
+      <a routerLink="/about" routerLinkActive="active">O aplikacji</a>
+    </nav>
+  </div>
+</header>

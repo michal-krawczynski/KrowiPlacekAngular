@@ -1,0 +1,55 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 72px;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(18,20,23,0.85), rgba(18,20,23,0.55));
+  border-bottom: 1px solid var(--outline);
+  z-index: 50;
+}
+.nav__inner {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: var(--text);
+}
+.brand__name { font-size: 20px; }
+.brand__accent { color: var(--brand-blue); }
+.brand__dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.06) inset;
+}
+.brand__dot--g { background: var(--brand-green); }
+.brand__dot--b { background: var(--brand-blue); }
+
+.links {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand-blue) 10%, var(--surface));
+  border: 1px solid var(--outline);
+}
+.links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+}
+.links a:hover { background: var(--surface-2); }
+.links a.active {
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-strong));
+  color: white;
+}
